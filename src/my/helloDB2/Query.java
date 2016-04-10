@@ -43,7 +43,7 @@ public class Query extends HttpServlet {
     		rsmd = rs.getMetaData();
     		numCols = rsmd.getColumnCount();
     		for (int i = 1; i <= numCols; i++) {
-    		colNames.add(rsmd.getColumnName(i));
+    			colNames.add(rsmd.getColumnName(i));
     		}
     		PrintWriter out = response.getWriter();
     		out.println("<table><thead><tr>");
@@ -79,7 +79,7 @@ public class Query extends HttpServlet {
 		try {
 			Class.forName("com.ibm.db2.jcc.DB2Driver");
 			db2Conn = DriverManager.getConnection
-			("jdbc:db2://192.86.32.155:5030/DALLASA:"
+			("jdbc:db2://192.86.32.54:5040/DALLASB:"
 			+ "user=" + DB_USER
 			+ ";" + "password=" + DB_PASSWORD + ";");
 			stmt = db2Conn.createStatement();
